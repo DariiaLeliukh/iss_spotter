@@ -1,16 +1,5 @@
 const { nextISSTimesForMyLocation } = require('./iss');
-
-/*
-  Print the given array of times in a nice human-readable way
-*/
-const printPassTimes = function(passTimes) {
-  for (const pass of passTimes) {
-    const datetime = new Date(0);
-    datetime.setUTCSeconds(pass.risetime);
-    const duration = pass.duration;
-    console.log(`Next pass at ${datetime} for ${duration} seconds!`);
-  }
-};
+const { printPassTimes } = require('./printPassTimes');
 
 /*
  Find times to spot the International Space Station flyovers the location
